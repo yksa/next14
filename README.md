@@ -42,3 +42,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - For sorting and grouping files in code editors
 - And finally, for avoiding potential naming conflicts with future Next.js file conventions
 - If you want to include an underscore in URL segments, you can prefix the folder with "%5F," which is the URL-encoded form of an underscore
+
+## Route Groups
+
+Allow us to logically group our routes and project files without affecting the URL path structure
