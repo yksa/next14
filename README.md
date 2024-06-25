@@ -46,3 +46,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Route Groups
 
 Allow us to logically group our routes and project files without affecting the URL path structure
+
+## Layouts
+
+- A page is UI that is unique to a route
+- A layout is UI that is shared between multiple pages in the app
+
+## How to create Layouts
+
+- You can define a layout by default exporting a React component from a layout.js or layout.tsx file
+- That component should accept a children prop that will be populated with a child page during rendering
