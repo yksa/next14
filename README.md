@@ -56,3 +56,20 @@ Allow us to logically group our routes and project files without affecting the U
 
 - You can define a layout by default exporting a React component from a layout.js or layout.tsx file
 - That component should accept a children prop that will be populated with a child page during rendering
+
+## Routing Metada
+
+- Ensuring proper search engine optimization (SEO) is crucial for increasing visibility and attracting users
+- Next.js introduced the Metadata API which allows you to define metadata for each page
+- Metadata ensures accurate and relevant information is displayed when your pages are shared or indexed
+
+## Configuring Metadata
+
+- Export a static metadata object
+- Export a dynamic generateMetada function
+
+Metadata rules
+
+- Both layout.tsx and page.tsx files can export metadata. If defined in a layout, it applies to all pages in that layout, but if defined in a page, it applies only to that page
+- Metadata is read in order, from the root level down to the final page level
+- When there's metadata in multiple places for the same route, they get combined, but page metadata will replace layout metadata if they have the same properties
