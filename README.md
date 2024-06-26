@@ -73,3 +73,10 @@ Metadata rules
 - Both layout.tsx and page.tsx files can export metadata. If defined in a layout, it applies to all pages in that layout, but if defined in a page, it applies only to that page
 - Metadata is read in order, from the root level down to the final page level
 - When there's metadata in multiple places for the same route, they get combined, but page metadata will replace layout metadata if they have the same properties
+
+## Templates
+
+Templates are similar to layouts in that they wrap each child layout or page
+But, with templates, when a user navigates between routes that share a template, a new instance of the component is mounted, DOM elements are recreated, state is not preserved, and effects are re-synchronized
+A template can be defined by exporting a default React component from a template.js or template.tsx file
+Similar to layouts, templates should also accept a children prop which will render the nested segments in the route
