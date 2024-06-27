@@ -76,9 +76,30 @@ Metadata rules
 
 ## Templates
 
-Templates are similar to layouts in that they wrap each child layout or page
+- Templates are similar to layouts in that they wrap each child layout or page
+- But, with templates, when a user navigates between routes that share a template, a new instance of the component is mounted, DOM elements are recreated, state is not preserved, and effects are re-synchronized
+- A template can be defined by exporting a default React component from a template.js or template.tsx file
+- Similar to layouts, templates should also accept a children prop which will render the nested segments in the route
 
-But, with templates, when a user navigates between routes that share a template, a new instance of the component is mounted, DOM elements are recreated, state is not preserved, and effects are re-synchronized
+## error.tsx
 
-A template can be defined by exporting a default React component from a template.js or template.tsx file
-Similar to layouts, templates should also accept a children prop which will render the nested segments in the route
+- Automatically wrap a route segment and its nested children in a React Error Boundary
+- Create error UI tailored to specific segments using the file-system hierarchy to adjust granularity
+- Isolate errors to affected segments while keeping the rest of the application functional
+- Add functionality to attempt to recover from an error without a full page reload
+
+## Component Hierarchy
+
+```bash
+<Layout>
+    <Template>
+        <ErrorBoundary fallback={<Error />}>
+            <Suspense fallback={<Loading />}>
+                <ErrorBoundary fallback={<NotFound />}>
+                    <Page />
+                </ErrorBoundary>
+            </Suspense>
+        </ErrorBoundary>
+    </Template>
+</Layout>
+```
