@@ -90,16 +90,16 @@ Metadata rules
 
 ## Component Hierarchy
 
-```bash
+```tsx
 <Layout>
-    <Template>
-        <ErrorBoundary fallback={<Error />}>
-            <Suspense fallback={<Loading />}>
-                <ErrorBoundary fallback={<NotFound />}>
-                    <Page />
-                </ErrorBoundary>
-            </Suspense>
+  <Template>
+    <ErrorBoundary fallback={<Error />}>
+      <Suspense fallback={<Loading />}>
+        <ErrorBoundary fallback={<NotFound />}>
+          <Page />
         </ErrorBoundary>
-    </Template>
+      </Suspense>
+    </ErrorBoundary>
+  </Template>
 </Layout>
 ```
