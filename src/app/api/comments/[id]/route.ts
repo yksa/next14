@@ -7,6 +7,9 @@ export async function GET(
   const comment = comments.find(
     (comment) => comment.id === parseInt(params.id)
   );
+  if (!comment) {
+    return Response.json({ message: "cannot find" });
+  }
   return Response.json(comment);
 }
 
@@ -22,4 +25,19 @@ export async function PATCH(
   comments[index].text = text;
 
   return Response.json(comments[index]);
+}
+
+export async function DELETE(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  const index = comments.findIndex(
+    (comment) => comment.id === parseInt(params.id)
+  );
+  const deletedComment = comments[index];
+  comments.splice(index, 1);
+  if (!deletedComment) {
+    return Response.json({ message: "cannot find" });
+  }
+  return Response.json(deletedComment);
 }
