@@ -7,6 +7,7 @@ export default function page() {
       <h1>Welcome home!</h1>
       <Link href={"/blog"}>Blog</Link>
       <Link href={"/products"}>Products</Link>
+      <Link href={"/about"}>About</Link>
     </>
   );
 }
