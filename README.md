@@ -115,3 +115,11 @@ Metadata rules
 - (..) to match segments one level above
 - (..)(..) to match segments two levels above
 - (...) to match segments from the root app directory
+
+## Route Handlers
+
+- Unlike page routes, which respond with HTML content, route handlers allow you to create RESTful endpoints, giving you full control over the response
+- There is no overhead of having to create and configure a separate server
+- Route handlers are also great for making external API requests
+- Route handlers run server-side, ensuring that sensitive information like private keys remains secure and never gets shipped to the browser
+- Route handlers are the equivalent of API routes in Page router
