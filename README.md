@@ -123,3 +123,14 @@ Metadata rules
 - Route handlers are also great for making external API requests
 - Route handlers run server-side, ensuring that sensitive information like private keys remains secure and never gets shipped to the browser
 - Route handlers are the equivalent of API routes in Page router
+
+## Caching in Route Handlers
+
+- Route Handlers are cached by default when using the GET method with the Response object in Next.js
+
+How to opt out of caching?
+
+- dynamic mode in Segment Config Option
+- using the Request object with the GET method
+- employing dynamic functions like headers() and cookies()
+- using any HTTP method other than GET
