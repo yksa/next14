@@ -293,3 +293,9 @@ Challenges
 - Many components from npm packages, which traditionally leverage client-side features, haven't yet integrated this directive
 - The absence of "use client" means that while these components will function correctly in Client Components, they may encounter issues or might not work at all within Server Components
 - To address this, you can wrap third-party components that rely on client-only features in your own Clinet Components
+
+## Context Providers
+
+- Context providers are typically rendered near the root of an application to share global application state and logic
+- Since React context is not supported in Server Component, attempting to create a context at the root of your application will result in an error
+- To address this, you can create a context and render it's provider inside a separate Client Component

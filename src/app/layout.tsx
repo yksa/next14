@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -16,19 +17,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <header>
-          <p style={{ backgroundColor: "lightblue", padding: "1rem" }}>
-            Header
-          </p>
-        </header>
-        {children}
-        <footer>
-          <p style={{ backgroundColor: "ghostwhite", padding: "1rem" }}>
-            Footer
-          </p>
-        </footer>
-      </body>
+      <ThemeProvider>
+        <body>
+          <header>
+            <p style={{ backgroundColor: "lightblue", padding: "1rem" }}>
+              Header
+            </p>
+          </header>
+          {children}
+          <footer>
+            <p style={{ backgroundColor: "ghostwhite", padding: "1rem" }}>
+              Footer
+            </p>
+          </footer>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
