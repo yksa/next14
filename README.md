@@ -259,3 +259,11 @@ Challenges
 
 - Server Components take charge of data fetching and static rendering, while Client Components are tasked with rendering the interactive elements of the application
 - The bottom line is that the RSC architecture enables React applications to leverage the best aspects of both server and client rendering, all while using a single language, a single framewrok, and a cohesive set of APIs
+
+## Static Rendering Summary
+
+- Static rendering is a strategy where the HTML is generated at build time
+- Along with the HTML, the RSC payload is created for each component, and JavaScript chunks are produced for client-side component hydration in the browser
+- If you navigate directly to a page route, the corresponding HTML file is served
+- If you navigate to the route from a different one, the route is created on the client side using the RSC payload and JavaScript chunks, without any additional requests to the server
+- Static rendering is great for performance and use cases include blogs, documentation, marketing pages etc.
