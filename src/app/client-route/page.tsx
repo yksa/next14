@@ -1,9 +1,9 @@
 "use client";
 
-import { useTheme } from "@/components/ThemeProvider";
+import { clientSideFunction } from "@/utils/client-utils";
 
 export default function ClientRoutePage() {
-  const theme = useTheme();
+  const result = clientSideFunction();
 
-  return <h1 style={{ color: theme.colors.primary }}>Client route</h1>;
+  return <h1>Client route {result}</h1>;
 }
