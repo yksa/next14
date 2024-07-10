@@ -304,3 +304,4 @@ Challenges
 
 - To compensate for server components not being able to manage state and handle interactivity, you need to create client components
 - It's recommended to position these client components lower in your compenent tree
+- To render Server Component inside Client Component, need to pass as a prop
