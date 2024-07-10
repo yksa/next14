@@ -1,3 +1,4 @@
+import { ImageSlider } from "@/components/ImageSlider";
 import { serverSideFunction } from "@/utils/server-utils";
 
 export default function ServerRoutePage() {
@@ -8,6 +9,7 @@ export default function ServerRoutePage() {
     <>
       <h1>ServerRoutePage</h1>
       <p>{result}</p>
+      <ImageSlider />
     </>
   );
 }
