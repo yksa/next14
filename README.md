@@ -299,3 +299,8 @@ Challenges
 - Context providers are typically rendered near the root of an application to share global application state and logic
 - Since React context is not supported in Server Component, attempting to create a context at the root of your application will result in an error
 - To address this, you can create a context and render it's provider inside a separate Client Component
+
+## Client Component Placement
+
+- To compensate for server components not being able to manage state and handle interactivity, you need to create client components
+- It's recommended to position these client components lower in your compenent tree
