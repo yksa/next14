@@ -9,6 +9,7 @@ export default function page() {
       <Link href={"/products"}>Products</Link>
       <Link href={"/about"}>About</Link>
       <Link href={"/dashboard"}>Dashboard</Link>
+      <Link href={"/product-detail"}>Product Detail</Link>
     </>
   );
 }
