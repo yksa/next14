@@ -305,3 +305,9 @@ Challenges
 - To compensate for server components not being able to manage state and handle interactivity, you need to create client components
 - It's recommended to position these client components lower in your compenent tree
 - To render Server Component inside Client Component, need to pass as a prop
+
+## Data Fetching in App Router
+
+- App Router uses the React Server Components (RSC) architecture, which allows us to fetch data using either server components or client components
+- It's adventageous to fetch data using server components, as they have direct access to server-side resources such as databases or file systems
+- This not only taps into the server's computational power and proximity to data sources for efficient data fetching and rendering but also minimizes the need for client-side processing
