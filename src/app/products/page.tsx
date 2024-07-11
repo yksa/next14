@@ -1,27 +1,26 @@
-import Link from "next/link";
-import React from "react";
+type TProduct = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+};
 
-export default function ProductList() {
-  const productId = 100;
+export default async function ProductsPage() {
+  const response = await fetch("http://localhost:3001/products");
+  const products = await response.json();
 
   return (
-    <>
-      <Link href={"/"}>Home</Link>
-      <h1>Product List</h1>
-      <h2>
-        <Link href={"products/1"}>Product 1</Link>
-      </h2>
-      <h2>
-        <Link href={"products/2"}>Product 2</Link>
-      </h2>
-      <h2>
-        <Link href={"products/3"} replace>
-          Product 3
-        </Link>
-      </h2>
-      <h2>
-        <Link href={`products/${productId}`}>Product {productId}</Link>
-      </h2>
-    </>
+    <ul className="space-y4 p-4">
+      {products.map((product: TProduct) => (
+        <li
+          key={product.id}
+          className="p-4 bg-white shadow-md rounded-lg text-gray-700 mb-2"
+        >
+          <h2 className="text-xl font-semibold">{product.title}</h2>
+          <p>{product.description}</p>
+          <p className="text-lg font-medium">${product.price}</p>
+        </li>
+      ))}
+    </ul>
   );
 }

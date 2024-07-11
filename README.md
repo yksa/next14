@@ -311,3 +311,7 @@ Challenges
 - App Router uses the React Server Components (RSC) architecture, which allows us to fetch data using either server components or client components
 - It's adventageous to fetch data using server components, as they have direct access to server-side resources such as databases or file systems
 - This not only taps into the server's computational power and proximity to data sources for efficient data fetching and rendering but also minimizes the need for client-side processing
+
+## Caching Data
+
+- By default, Next.js automatically caches the returned values of fetch in the Data Cache on the server
