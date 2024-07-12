@@ -325,3 +325,13 @@ Challenges
 - This optimization not only enhances performance but also simplifies data fetching within a component tree
 - When the same data is needed across different components in a route (e.g., in a Layout, Page, and multiple components), it eliminates the need to fetch data at the top of the tree and pass props between components
 - Instead, data can be fetched directly within the components that require it, without concerns about the performance implications of multiple network requests for the same data
+
+## Revalidation
+
+- Revalidation is the process of purging the Data Cache and re-fetching the latest data
+
+Time-based revalidation
+
+- Next.js automatically revalidates data after a certain amount of time has passed
+- You can set the revalidate route segment configuration to establish the default revalidation time for a layout or page: export const revalidate = 10;
+- Regarding the revalidation frequency, the lowest revalidate time across each layout and page of a single route will determine the revalidation frequency of the entire route
